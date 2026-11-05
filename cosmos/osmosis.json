@@ -1,0 +1,236 @@
+{
+  "id": "osmosis",
+  "chainId": "osmosis-1",
+  "name": "Osmosis",
+  "bech32Prefix": "osmo",
+  "coinType": 118,
+  "keyType": "secp256k1",
+  "feeDenom": "uosmo",
+  "display": {
+    "symbol": "OSMO",
+    "decimals": 6
+  },
+  "lcd": "https://osmosis-rest.publicnode.com",
+  "explorerTx": "https://www.mintscan.io/osmosis/transactions/${txHash}",
+  "explorerAccount": "https://www.mintscan.io/osmosis/accounts/${accountAddress}",
+  "pubKeyTypeUrl": "/cosmos.crypto.secp256k1.PubKey",
+  "rpc": "https://osmosis-rpc.publicnode.com",
+  "features": [
+    "cosmwasm",
+    "staking"
+  ],
+  "stakeCurrency": {
+    "denom": "uosmo",
+    "symbol": "OSMO",
+    "decimals": 6
+  },
+  "gasAdjustment": 1.3,
+  "minGasPrice": "0.1",
+  "testnet": false,
+  "txSearch": {
+    "lcd": "https://osmosis-rest.publicnode.com",
+    "param": "query"
+  },
+  "currencies": [
+    {
+      "denom": "uosmo",
+      "symbol": "OSMO",
+      "decimals": 6
+    },
+    {
+      "denom": "uion",
+      "symbol": "ION",
+      "decimals": 6
+    },
+    {
+      "denom": "ibc/D189335C6E4A68B513C10AB227BF1C1D38C746766278BA3EEB4FB14124F1D858",
+      "symbol": "USDC",
+      "decimals": 6
+    },
+    {
+      "denom": "ibc/EA1D43981D5C9A1C4AAEA9C23BB1D4FA126BA9BC7020A25E0AE4AA841EA25DC5",
+      "symbol": "WETH",
+      "decimals": 18
+    },
+    {
+      "denom": "ibc/D1542AA8762DB13087D8364F3EA6509FD6F009A34F00426AF9E4F9FA85CBBF1F",
+      "symbol": "WBTC",
+      "decimals": 8
+    },
+    {
+      "denom": "ibc/8242AD24008032E457D2E12D46588FD39FB54FB29680C6C7663D296B383C37C4",
+      "symbol": "USDT",
+      "decimals": 6
+    },
+    {
+      "denom": "ibc/0CD3A0285E1341859B5E86B6AB7682F023D03E97607CCC1DC95706411D866DF7",
+      "symbol": "DAI",
+      "decimals": 18
+    },
+    {
+      "denom": "ibc/6329DD8CF31A334DD5BE3F68C846C9FE313281362B37686A62343BAC1EB1546D",
+      "symbol": "BUSD",
+      "decimals": 18
+    },
+    {
+      "denom": "ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2",
+      "symbol": "ATOM",
+      "decimals": 6
+    },
+    {
+      "denom": "ibc/F4A070A6D78496D53127EA85C094A9EC87DFC1F36071B8CCDDBD020F933D213D",
+      "symbol": "WBNB",
+      "decimals": 18
+    },
+    {
+      "denom": "ibc/AB589511ED0DD5FA56171A39978AFBF1371DB986EC1C3526CE138A16377E39BB",
+      "symbol": "WMATIC",
+      "decimals": 18
+    },
+    {
+      "denom": "ibc/6F62F01D913E3FFE472A38C78235B8F021B511BC6596ADFF02615C8F83D3B373",
+      "symbol": "WAVAX",
+      "decimals": 18
+    },
+    {
+      "denom": "ibc/3FF92D26B407FD61AE95D975712A7C319CDE28DE4D80BDC9978D935932B991D7",
+      "symbol": "DOT",
+      "decimals": 10
+    },
+    {
+      "denom": "ibc/57AA1A70A4BC9769C525EBF6386F7A21536E04A79D62E1981EFCEF9428EBB205",
+      "symbol": "KAVA",
+      "decimals": 6
+    },
+    {
+      "denom": "ibc/68BAF19F76BAC04C4CEA06325EF91D43E8637AE43EAC7887CE6211B4B99E1EC0",
+      "symbol": "STARS",
+      "decimals": 6
+    },
+    {
+      "denom": "ibc/64BA6E31FE887D66C6F8F31C7B1A80C7CA179239677B4088BB55F5EA07DBE273",
+      "symbol": "INJ",
+      "decimals": 18
+    },
+    {
+      "denom": "ibc/0E43EDE2E2A3AFA36D0CD38BDDC0B49FECA64FA426A82E102F304E430ECF46EE",
+      "symbol": "FRAX",
+      "decimals": 18
+    },
+    {
+      "denom": "ibc/D6C28E07F7343360AC41E15DDD44D79701DDCA2E0C2C41279739C8D4AE5264BC",
+      "symbol": "HARD",
+      "decimals": 6
+    },
+    {
+      "denom": "ibc/70CF1A54E23EA4E480DEDA9E12082D3FD5684C3483CBDCE190C5C807227688C5",
+      "symbol": "SWP",
+      "decimals": 6
+    },
+    {
+      "denom": "ibc/D3327A763C23F01EC43D1F0DB3CEFEC390C362569B6FD191F40A5192F8960049",
+      "symbol": "LINK",
+      "decimals": 18
+    },
+    {
+      "denom": "ibc/384E5DD50BDE042E1AAF51F312B55F08F95BC985C503880189258B4D9374CBBE",
+      "symbol": "AAVE",
+      "decimals": 18
+    },
+    {
+      "denom": "ibc/F83CC6471DA4D4B508F437244F10B9E4C68975344E551A2DEB6B8617AB08F0D4",
+      "symbol": "APE",
+      "decimals": 18
+    },
+    {
+      "denom": "ibc/D27DDDF34BB47E5D5A570742CC667DE53277867116CCCA341F27785E899A70F3",
+      "symbol": "MKR",
+      "decimals": 18
+    },
+    {
+      "denom": "ibc/BD796662F8825327D41C96355DF62045A5BA225BAE31C0A86289B9D88ED3F44E",
+      "symbol": "RAI",
+      "decimals": 18
+    },
+    {
+      "denom": "ibc/19305E20681911F14D1FB275E538CDE524C3BF88CF9AE5D5F78F4D4DA05E85B2",
+      "symbol": "SHIB",
+      "decimals": 18
+    },
+    {
+      "denom": "ibc/1E26DB0E5122AED464D98462BD384FCCB595732A66B3970AE6CE0B58BAE0FC49",
+      "symbol": "WGLMR",
+      "decimals": 18
+    },
+    {
+      "denom": "ibc/C78F65E1648A3DFE0BAEB6C4CDA69CC2A75437F1793C0E6386DFDA26393790AE",
+      "symbol": "USDX",
+      "decimals": 6
+    },
+    {
+      "denom": "ibc/903A61A498756EA560B85A85132D3AEE21B5DEDD41213725D22ABF276EA6945E",
+      "symbol": "AXL",
+      "decimals": 6
+    },
+    {
+      "denom": "ibc/5E2DFDF1734137302129EA1C1BA21A580F96F778D4F021815EA4F6DB378DA1A4",
+      "symbol": "WFTM",
+      "decimals": 18
+    },
+    {
+      "denom": "ibc/231FD77ECCB2DB916D314019DA30FE013202833386B1908A191D16989AD80B5A",
+      "symbol": "USDC",
+      "decimals": 6
+    },
+    {
+      "denom": "ibc/F17C9CA112815613C5B6771047A093054F837C3020CBA59DFFD9D780A8B2984C",
+      "symbol": "USDC",
+      "decimals": 6
+    },
+    {
+      "denom": "ibc/7FA7EC64490E3BDE5A1A28CBE73CC0AD22522794957BC891C46321E3A6074DB9",
+      "symbol": "FRNZ",
+      "decimals": 6
+    },
+    {
+      "denom": "ibc/18FB5C09D9D2371F659D4846A956FA56225E377EE3C3652A2BF3542BF809159D",
+      "symbol": "axlFIL",
+      "decimals": 18
+    },
+    {
+      "denom": "ibc/10E5E5B06D78FFBB61FD9F89209DEE5FD4446ED0550CBB8E3747DA79E10D9DC6",
+      "symbol": "ARB",
+      "decimals": 18
+    },
+    {
+      "denom": "ibc/E47F4E97C534C95B942729E1B25DBDE111EA791411CFF100515050BEA0AC0C6B",
+      "symbol": "PEPE",
+      "decimals": 18
+    },
+    {
+      "denom": "factory/osmo14klwqgkmackvx2tqa0trtg69dmy0nrg4ntq4gjgw2za4734r5seqjqm4gm/uibcx",
+      "symbol": "IBCX",
+      "decimals": 6
+    },
+    {
+      "denom": "ibc/4D7A6F2A7744B1534C984A21F9EDFFF8809FC71A9E9243FFB702073E7FCA513A",
+      "symbol": "cbETH",
+      "decimals": 18
+    },
+    {
+      "denom": "ibc/E610B83FD5544E00A8A1967A2EB3BEF25F1A8CFE8650FE247A8BD4ECA9DC9222",
+      "symbol": "rETH",
+      "decimals": 18
+    },
+    {
+      "denom": "ibc/81F578C39006EB4B27FFFA9460954527910D73390991B379C03B18934D272F46",
+      "symbol": "sfrxETH",
+      "decimals": 18
+    },
+    {
+      "denom": "ibc/B2BD584CD2A0A9CE53D4449667E26160C7D44A9C41AF50F602C201E5B3CCA46C",
+      "symbol": "wstETH",
+      "decimals": 18
+    }
+  ]
+}

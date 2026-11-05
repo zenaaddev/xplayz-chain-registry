@@ -1,0 +1,220 @@
+{
+  "id": "injective",
+  "chainId": "injective-1",
+  "name": "Injective",
+  "bech32Prefix": "inj",
+  "coinType": 60,
+  "keyType": "eth_secp256k1",
+  "feeDenom": "inj",
+  "display": {
+    "symbol": "INJ",
+    "decimals": 18
+  },
+  "lcd": "https://injective-rest.publicnode.com",
+  "explorerTx": "https://www.mintscan.io/injective/transactions/${txHash}",
+  "explorerAccount": "https://www.mintscan.io/injective/accounts/${accountAddress}",
+  "pubKeyTypeUrl": "/injective.crypto.v1beta1.ethsecp256k1.PubKey",
+  "rpc": "https://injective-rpc.publicnode.com",
+  "features": [
+    "staking"
+  ],
+  "stakeCurrency": {
+    "denom": "inj",
+    "symbol": "INJ",
+    "decimals": 18
+  },
+  "gasAdjustment": 1.3,
+  "minGasPrice": "160000000",
+  "testnet": false,
+  "txSearch": {
+    "lcd": "https://injective-rest.publicnode.com",
+    "param": "query"
+  },
+  "currencies": [
+    {
+      "denom": "inj",
+      "symbol": "INJ",
+      "decimals": 18
+    },
+    {
+      "denom": "ibc/4ABBEF4C8926DDDB320AE5188CFD63267ABBCEFC0583E4AE05D6E5AA2401DDAB",
+      "symbol": "USDTkv",
+      "decimals": 6
+    },
+    {
+      "denom": "factory/inj1cdwt8g7nxgtg2k4fn8sj363mh9ahkw2qt0vrnc/ampINJ",
+      "symbol": "ampINJ",
+      "decimals": 6
+    },
+    {
+      "denom": "factory/inj14lf8xm6fcvlggpa7guxzjqwjmtr24gnvf56hvz/autism",
+      "symbol": "AUTISM",
+      "decimals": 6
+    },
+    {
+      "denom": "factory/inj1xtel2knkt8hmc9dnzpjz6kdmacgcfmlv5f308w/ninja",
+      "symbol": "NINJA",
+      "decimals": 6
+    },
+    {
+      "denom": "factory/inj1jdt04erw6jdmh6c939u87kldf3mvvmkedsjp3w/OYCI",
+      "symbol": "OYCI",
+      "decimals": 6
+    },
+    {
+      "denom": "factory/inj1rmjzj9fn47kdmfk4f3z39qr6czexxe0yjyc546/WGMI",
+      "symbol": "WGMI",
+      "decimals": 6
+    },
+    {
+      "denom": "ibc/DD648F5D3CDA56D0D8D8820CF703D246B9FC4007725D8B38D23A21FF1A1477E3",
+      "symbol": "WOSMO",
+      "decimals": 6
+    },
+    {
+      "denom": "factory/inj1h0ypsdtjfcjynqu3m75z2zwwz5mmrj8rtk2g52/uhava",
+      "symbol": "HAVA",
+      "decimals": 6
+    },
+    {
+      "denom": "ibc/A0C5AD197FECAF6636F589071338DC7ECD6B0809CD3A5AB131EAAA5395E7E5E8",
+      "symbol": "BADKID",
+      "decimals": 6
+    },
+    {
+      "denom": "inj1sudjgsyhufqu95yp7rqad3g78ws8g6htf32h88",
+      "symbol": "NINPO",
+      "decimals": 6
+    },
+    {
+      "denom": "inj16ukv8g2jcmml7gykxn5ws8ykhxjkugl4zhft5h",
+      "symbol": "JUDO",
+      "decimals": 6
+    },
+    {
+      "denom": "inj1rmzufd7h09sqfrre5dtvu5d09ta7c0t4jzkr2f",
+      "symbol": "nINJ",
+      "decimals": 18
+    },
+    {
+      "denom": "inj16jf4qkcarp3lan4wl2qkrelf4kduvvujwg0780",
+      "symbol": "nATOM",
+      "decimals": 6
+    },
+    {
+      "denom": "inj1kehk5nvreklhylx22p3x0yjydfsz9fv3fvg5xt",
+      "symbol": "nWETH",
+      "decimals": 18
+    },
+    {
+      "denom": "inj1cy9hes20vww2yr6crvs75gxy5hpycya2hmjg9s",
+      "symbol": "nUSDT",
+      "decimals": 6
+    },
+    {
+      "denom": "inj1fzquxxxam59z6fzewy2hvvreeh3m04x83zg4vv",
+      "symbol": "nTIA",
+      "decimals": 6
+    },
+    {
+      "denom": "factory/inj1llr45x92t7jrqtxvc02gpkcqhqr82dvyzkr4mz/NBZ",
+      "symbol": "NBZ",
+      "decimals": 6
+    },
+    {
+      "denom": "factory/inj1maeyvxfamtn8lfyxpjca8kuvauuf2qeu6gtxm3/Talis",
+      "symbol": "TALIS",
+      "decimals": 6
+    },
+    {
+      "denom": "factory/inj1maeyvxfamtn8lfyxpjca8kuvauuf2qeu6gtxm3/xTalis",
+      "symbol": "XTALIS",
+      "decimals": 6
+    },
+    {
+      "denom": "ibc/2CBC2EA121AE42563B08028466F37B600F2D7D4282342DE938283CC3FB2BC00E",
+      "symbol": "USDC.n",
+      "decimals": 6
+    },
+    {
+      "denom": "factory/inj1a6xdezq7a94qwamec6n6cnup02nvewvjtz6h6e/SYN",
+      "symbol": "SYN",
+      "decimals": 6
+    },
+    {
+      "denom": "factory/inj1ej2f3lmpxj4djsmmuxvnfuvplrut7zmwrq7zj8/syn.ash",
+      "symbol": "ashSYN",
+      "decimals": 6
+    },
+    {
+      "denom": "factory/inj1je6n5sr4qtx2lhpldfxndntmgls9hf38ncmcez/COSMO",
+      "symbol": "COSMO",
+      "decimals": 6
+    },
+    {
+      "denom": "ibc/5339B0D20986A7C20C2548ED9D6B8DE47BB64E03ABFD051B7792E713036EA20C",
+      "symbol": "XTRUMP",
+      "decimals": 6
+    },
+    {
+      "denom": "factory/inj178zy7myyxewek7ka7v9hru8ycpvfnen6xeps89/DRUGS",
+      "symbol": "DRUGS",
+      "decimals": 6
+    },
+    {
+      "denom": "factory/inj1v3a4zznudwpukpr8y987pu5gnh4xuf7v36jhva/nept",
+      "symbol": "NEPT",
+      "decimals": 6
+    },
+    {
+      "denom": "factory/inj1s9hr5zfz3xrkzchde94hd2d0edjs4q5mrqrz6x/BITCOIN",
+      "symbol": "BITCOIN",
+      "decimals": 6
+    },
+    {
+      "denom": "factory/inj1s9hr5zfz3xrkzchde94hd2d0edjs4q5mrqrz6x/CRYPTO",
+      "symbol": "CRYPTO",
+      "decimals": 6
+    },
+    {
+      "denom": "factory/inj1s9hr5zfz3xrkzchde94hd2d0edjs4q5mrqrz6x/BRICS",
+      "symbol": "BRICS",
+      "decimals": 6
+    },
+    {
+      "denom": "factory/inj1s9hr5zfz3xrkzchde94hd2d0edjs4q5mrqrz6x/INC",
+      "symbol": "INC",
+      "decimals": 6
+    },
+    {
+      "denom": "factory/inj14ejqjyq8um4p3xfqj74yld5waqljf88f9eneuk/inj18luqttqyckgpddndh8hvaq25d5nfwjc78m56lc",
+      "symbol": "hINJ",
+      "decimals": 18
+    },
+    {
+      "denom": "ibc/0E293A7622DC9A6439DB60E6D234B5AF446962E27CA3AB44D0590603DFF6968E",
+      "symbol": "WBTC.atom",
+      "decimals": 8
+    },
+    {
+      "denom": "factory/inj1n636d9gzrqggdk66n2f97th0x8yuhfrtx520e7/ausd",
+      "symbol": "AUSD",
+      "decimals": 6
+    },
+    {
+      "denom": "factory/inj13j2rpnlwl30c02d4pzukykwfeyyhelvry9cqte/shroom_8_be9bddf36b94db69",
+      "symbol": "HELIXPOINT",
+      "decimals": 18
+    },
+    {
+      "denom": "factory/inj13j2rpnlwl30c02d4pzukykwfeyyhelvry9cqte/shroom_0_3b4d31d5571b97db",
+      "symbol": "MOTION",
+      "decimals": 18
+    },
+    {
+      "denom": "factory/inj1dg3nxn4z36p2sqem4cy2jsdjf4ytk8cn256jjx/T42",
+      "symbol": "T42",
+      "decimals": 6
+    }
+  ]
+}

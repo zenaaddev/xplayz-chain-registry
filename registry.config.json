@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "source": "cosmos/chain-registry (CC BY 4.0)",
+  "order": [
+    "cosmoshub",
+    "osmosis",
+    "noble",
+    "axelar",
+    "injective",
+    "kava",
+    "archway"
+  ]
+}
