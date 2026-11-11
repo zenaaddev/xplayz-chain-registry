@@ -8,5 +8,13 @@
     "noble",
     "celestia",
     "dydx"
+  ],
+  "testnetOrder": [
+    "cosmoshub-testnet",
+    "osmosis-testnet",
+    "injective-testnet",
+    "noble-testnet",
+    "celestia-testnet",
+    "dydx-testnet"
   ]
 }
