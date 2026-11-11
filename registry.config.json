@@ -4,10 +4,9 @@
   "order": [
     "cosmoshub",
     "osmosis",
-    "noble",
-    "axelar",
     "injective",
-    "kava",
-    "archway"
+    "noble",
+    "celestia",
+    "dydx"
   ]
 }

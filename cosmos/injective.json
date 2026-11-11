@@ -16,7 +16,8 @@
   "pubKeyTypeUrl": "/injective.crypto.v1beta1.ethsecp256k1.PubKey",
   "rpc": "https://injective-rpc.publicnode.com",
   "features": [
-    "staking"
+    "staking",
+    "cancel-unbonding"
   ],
   "stakeCurrency": {
     "denom": "inj",
