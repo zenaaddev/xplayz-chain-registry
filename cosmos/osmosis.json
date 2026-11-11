@@ -17,7 +17,8 @@
   "rpc": "https://osmosis-rpc.publicnode.com",
   "features": [
     "cosmwasm",
-    "staking"
+    "staking",
+    "cancel-unbonding"
   ],
   "stakeCurrency": {
     "denom": "uosmo",
