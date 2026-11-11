@@ -1,0 +1,51 @@
+{
+  "id": "injective-testnet",
+  "chainId": "injective-888",
+  "name": "Injective Testnet",
+  "bech32Prefix": "inj",
+  "coinType": 60,
+  "keyType": "eth_secp256k1",
+  "feeDenom": "inj",
+  "display": {
+    "symbol": "INJ",
+    "decimals": 18
+  },
+  "lcd": "https://testnet.sentry.lcd.injective.network",
+  "explorerTx": "https://www.mintscan.io/injective-testnet/tx/${txHash}",
+  "explorerAccount": "https://www.mintscan.io/injective-testnet/address/${accountAddress}",
+  "pubKeyTypeUrl": "/injective.crypto.v1beta1.ethsecp256k1.PubKey",
+  "rpc": "https://testnet.sentry.tm.injective.network",
+  "features": [
+    "staking",
+    "cancel-unbonding"
+  ],
+  "stakeCurrency": {
+    "denom": "inj",
+    "symbol": "INJ",
+    "decimals": 18
+  },
+  "gasAdjustment": 1.3,
+  "minGasPrice": "160000000",
+  "testnet": true,
+  "txSearch": {
+    "lcd": "https://injective-testnet-api.polkachu.com",
+    "param": "query"
+  },
+  "currencies": [
+    {
+      "denom": "inj",
+      "symbol": "INJ",
+      "decimals": 18
+    },
+    {
+      "denom": "erc20:0x0C382e685bbeeFE5d3d9C29e29E341fEE8E84C5d",
+      "symbol": "USDC",
+      "decimals": 6
+    },
+    {
+      "denom": "peggy0x87aB3B4C8661e07D6372361211B96ed4Dc36B1B5",
+      "symbol": "USDT",
+      "decimals": 6
+    }
+  ]
+}

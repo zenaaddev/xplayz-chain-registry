@@ -1,0 +1,46 @@
+{
+  "id": "dydx-testnet",
+  "chainId": "dydx-testnet-4",
+  "name": "dYdX Testnet",
+  "bech32Prefix": "dydx",
+  "coinType": 118,
+  "keyType": "secp256k1",
+  "feeDenom": "adv4tnt",
+  "display": {
+    "symbol": "DV4TNT",
+    "decimals": 18
+  },
+  "lcd": "https://dydx-testnet-api.polkachu.com",
+  "explorerTx": "https://www.mintscan.io/dydx-testnet/tx/${txHash}",
+  "explorerAccount": "https://www.mintscan.io/dydx-testnet/address/${accountAddress}",
+  "pubKeyTypeUrl": "/cosmos.crypto.secp256k1.PubKey",
+  "rpc": "https://dydx-testnet-rpc.polkachu.com",
+  "features": [
+    "staking",
+    "cancel-unbonding"
+  ],
+  "stakeCurrency": {
+    "denom": "adv4tnt",
+    "symbol": "DV4TNT",
+    "decimals": 18
+  },
+  "gasAdjustment": 1.3,
+  "minGasPrice": "25000000000",
+  "testnet": true,
+  "txSearch": {
+    "lcd": "https://test-dydx-rest.kingnodes.com",
+    "param": "query"
+  },
+  "currencies": [
+    {
+      "denom": "adv4tnt",
+      "symbol": "DV4TNT",
+      "decimals": 18
+    },
+    {
+      "denom": "ibc/8E27BA2D5493AF5636760E354E46004562C46AB7EC0CC4C1CA14E9E20E2545B5",
+      "symbol": "USDC.n",
+      "decimals": 6
+    }
+  ]
+}

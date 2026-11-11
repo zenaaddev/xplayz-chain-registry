@@ -1,0 +1,41 @@
+{
+  "id": "celestia-testnet",
+  "chainId": "mocha-5",
+  "name": "Celestia Testnet",
+  "bech32Prefix": "celestia",
+  "coinType": 118,
+  "keyType": "secp256k1",
+  "feeDenom": "utia",
+  "display": {
+    "symbol": "TIA",
+    "decimals": 6
+  },
+  "lcd": "https://api.celestia-mocha.com",
+  "explorerTx": "https://www.mintscan.io/celestia-testnet/tx/${txHash}",
+  "explorerAccount": "https://www.mintscan.io/celestia-testnet/address/${accountAddress}",
+  "pubKeyTypeUrl": "/cosmos.crypto.secp256k1.PubKey",
+  "rpc": "https://rpc.celestia-mocha.com",
+  "features": [
+    "staking",
+    "cancel-unbonding"
+  ],
+  "stakeCurrency": {
+    "denom": "utia",
+    "symbol": "TIA",
+    "decimals": 6
+  },
+  "gasAdjustment": 1.3,
+  "minGasPrice": "0.02",
+  "testnet": true,
+  "txSearch": {
+    "lcd": "https://api.celestia-mocha.com",
+    "param": "query"
+  },
+  "currencies": [
+    {
+      "denom": "utia",
+      "symbol": "TIA",
+      "decimals": 6
+    }
+  ]
+}

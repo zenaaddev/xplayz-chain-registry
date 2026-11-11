@@ -1,4 +1,6 @@
-// 체인 파일(cosmos/*.json)을 검사하고 하나로 합쳐 dist/registry.json 을 만든다.
+// 체인 파일을 검사하고 합쳐 두 파일을 만든다.
+// - dist/registry.json: 출시 체인(cosmos/*.json, order) — 출시 빌드가 받는다.
+// - dist/registry-testnet.json: 출시 체인 + 테스트넷(cosmos-testnet/*.json, testnetOrder) — 개발 빌드 전용.
 // 규칙은 xPlayz 앱의 레지스트리 스키마(apps/mobile/src/lib/chains/registry/schema.ts)와 같다 —
 // 앱도 받을 때 다시 검사해 틀린 항목을 버리지만, 여기서 먼저 막아 배포 파일에 들어가지 않게 한다.
 // 의존성 없이 Node 20+ 로 돈다: `node scripts/build.mjs` (검사만: `node scripts/build.mjs --check`).
@@ -78,31 +80,46 @@ function check(chain, file) {
 }
 
 const config = JSON.parse(readFileSync(join(ROOT, 'registry.config.json'), 'utf8'));
-const files = readdirSync(join(ROOT, 'cosmos')).filter((f) => f.endsWith('.json')).sort();
-const byId = new Map();
 const errors = [];
-for (const file of files) {
-  const path = `cosmos/${file}`;
-  let chain;
-  try {
-    chain = JSON.parse(readFileSync(join(ROOT, path), 'utf8'));
-  } catch (e) {
-    errors.push(`${path}: JSON 이 아니다 (${e.message})`);
-    continue;
+
+// 한 묶음(폴더 + 순서 키)을 검사하고 순서대로 돌려준다. 폴더가 정한 testnet 값과 파일 값이 같아야 한다.
+function load(dir, orderKey, testnet) {
+  const files = readdirSync(join(ROOT, dir)).filter((f) => f.endsWith('.json')).sort();
+  const byId = new Map();
+  for (const file of files) {
+    const path = `${dir}/${file}`;
+    let chain;
+    try {
+      chain = JSON.parse(readFileSync(join(ROOT, path), 'utf8'));
+    } catch (e) {
+      errors.push(`${path}: JSON 이 아니다 (${e.message})`);
+      continue;
+    }
+    errors.push(...check(chain, path));
+    if (typeof chain.testnet === 'boolean' && chain.testnet !== testnet) errors.push(`${path}: ${dir}/ 의 체인은 testnet ${testnet}`);
+    byId.set(chain.id, chain);
   }
-  errors.push(...check(chain, path));
-  byId.set(chain.id, chain);
+  const order = config[orderKey] ?? [];
+  for (const id of order) if (!byId.has(id)) errors.push(`registry.config.json: ${orderKey} 의 ${id} 파일이 없다`);
+  for (const id of byId.keys()) if (!order.includes(id)) errors.push(`registry.config.json: ${id} 가 ${orderKey} 에 없다`);
+  if (new Set(order).size !== order.length) errors.push(`registry.config.json: ${orderKey} 에 같은 id 가 두 번`);
+  return order.map((id) => byId.get(id)).filter(Boolean);
 }
-const order = config.order ?? [];
-for (const id of order) if (!byId.has(id)) errors.push(`registry.config.json: order 의 ${id} 파일이 없다`);
-for (const id of byId.keys()) if (!order.includes(id)) errors.push(`registry.config.json: ${id} 가 order 에 없다`);
-if (new Set(order).size !== order.length) errors.push('registry.config.json: order 에 같은 id 가 두 번');
-const chainIds = [...byId.values()].map((c) => c.chainId);
-if (new Set(chainIds).size !== chainIds.length) errors.push('같은 chainId 가 두 파일에');
+
+const mainnet = load('cosmos', 'order', false);
+const testnets = load('cosmos-testnet', 'testnetOrder', true);
+// 테스트넷 파일은 두 묶음을 합치므로 id·chainId 는 묶음을 넘어서도 겹치면 안 된다(앱이 뒤의 것을 버린다).
+const all = [...mainnet, ...testnets];
+if (new Set(all.map((c) => c.id)).size !== all.length) errors.push('같은 id 가 두 파일에');
+if (new Set(all.map((c) => c.chainId)).size !== all.length) errors.push('같은 chainId 가 두 파일에');
 if (config.version !== 1 || !text(config.source)) errors.push('registry.config.json: version 1 · source');
 
-const out = JSON.stringify({ version: 1, source: config.source, chains: order.map((id) => byId.get(id)) });
-if (Buffer.byteLength(out) > LIMIT) errors.push(`합친 파일이 ${LIMIT} 바이트를 넘는다`);
+// 출시 빌드는 registry.json 만, 개발 빌드는 registry-testnet.json 을 받는다. 256KB 제한은 파일마다다.
+const outputs = [
+  ['registry.json', mainnet],
+  ['registry-testnet.json', all],
+].map(([name, chains]) => ({ name, count: chains.length, out: JSON.stringify({ version: 1, source: config.source, chains }) }));
+for (const { name, out } of outputs) if (Buffer.byteLength(out) > LIMIT) errors.push(`${name} 이 ${LIMIT} 바이트를 넘는다`);
 
 if (errors.length) {
   console.error(errors.join('\n'));
@@ -110,7 +127,7 @@ if (errors.length) {
 }
 if (!process.argv.includes('--check')) {
   mkdirSync(join(ROOT, 'dist'), { recursive: true });
-  writeFileSync(join(ROOT, 'dist/registry.json'), out);
-  writeFileSync(join(ROOT, 'dist/index.html'), '<!doctype html><meta charset="utf-8"><title>xPlayz chain registry</title><p><a href="registry.json">registry.json</a></p>\n');
+  for (const { name, out } of outputs) writeFileSync(join(ROOT, 'dist', name), out);
+  writeFileSync(join(ROOT, 'dist/index.html'), '<!doctype html><meta charset="utf-8"><title>xPlayz chain registry</title><p><a href="registry.json">registry.json</a></p><p><a href="registry-testnet.json">registry-testnet.json</a></p>\n');
 }
-console.log(`OK — 체인 ${order.length}개, ${Buffer.byteLength(out)} 바이트`);
+console.log(`OK — ${outputs.map(({ name, count, out }) => `${name} 체인 ${count}개 ${Buffer.byteLength(out)} 바이트`).join(' · ')}`);
