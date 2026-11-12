@@ -16,6 +16,7 @@
   "pubKeyTypeUrl": "/injective.crypto.v1beta1.ethsecp256k1.PubKey",
   "rpc": "https://injective-rpc.publicnode.com",
   "features": [
+    "cosmwasm",
     "staking",
     "cancel-unbonding"
   ],

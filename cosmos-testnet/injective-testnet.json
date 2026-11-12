@@ -16,6 +16,7 @@
   "pubKeyTypeUrl": "/injective.crypto.v1beta1.ethsecp256k1.PubKey",
   "rpc": "https://testnet.sentry.tm.injective.network",
   "features": [
+    "cosmwasm",
     "staking",
     "cancel-unbonding"
   ],
