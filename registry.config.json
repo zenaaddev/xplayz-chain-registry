@@ -4,13 +4,11 @@
   "order": [
     "cosmoshub",
     "osmosis",
-    "injective",
-    "celestia"
+    "injective"
   ],
   "testnetOrder": [
     "cosmoshub-testnet",
     "osmosis-testnet",
-    "injective-testnet",
-    "celestia-testnet"
+    "injective-testnet"
   ]
 }
