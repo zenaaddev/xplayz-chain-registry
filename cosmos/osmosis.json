@@ -232,6 +232,11 @@
       "denom": "ibc/B2BD584CD2A0A9CE53D4449667E26160C7D44A9C41AF50F602C201E5B3CCA46C",
       "symbol": "wstETH",
       "decimals": 18
+    },
+    {
+      "denom": "ibc/95C9B5870F95E21A242E6AF9ADCB1F212EE4A8855087226C36FBE43FC41A77B8",
+      "symbol": "XPLA",
+      "decimals": 18
     }
   ]
 }
