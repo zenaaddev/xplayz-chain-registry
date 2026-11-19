@@ -87,11 +87,6 @@
       "denom": "factory/cosmos1czdq25vuxw64gcj3lwvl3z93l76d92y7nys9u2/cinn",
       "symbol": "CINN",
       "decimals": 6
-    },
-    {
-      "denom": "ibc/102A112CAEE6E503721048E5B2221252E40ABAB8B4344680E28F17BEAC9F9FB1",
-      "symbol": "XPLA",
-      "decimals": 18
     }
   ]
 }
