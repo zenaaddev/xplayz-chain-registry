@@ -61,7 +61,12 @@ async function ask(chainId, denom) {
         body: JSON.stringify({ source_asset_denom: denom, source_asset_chain_id: chainId, allow_multi_tx: false }),
         signal: controller.signal,
       });
-      if (res.ok) return (await res.json()).dest_assets ?? {};
+      if (res.ok) {
+        const body = await res.json();
+        // 200 인데 dest_assets 가 없으면 응답 형식이 바뀐 것이다 — «받는 체인 없음» 으로 덮지 않고 실패로 본다.
+        if (!body || typeof body.dest_assets !== 'object') throw new Error('dest_assets 없음');
+        return body.dest_assets;
+      }
       // Skip 이 모르는 토큰은 404 «route not found» 다 — 실패가 아니라 «받는 체인 없음».
       if (res.status === 404) return {};
       last = `HTTP ${res.status}`;

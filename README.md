@@ -19,7 +19,7 @@ xPlayz 지갑 앱(`zenaaddev/xplayz`)이 «다른 체인» 목록으로 받는 C
 - 내용: 출시 체인(앱 내장 XPLA 메인넷 + `registry.json` 체인)의 알려진 토큰마다 1홉으로 보낼 수 있는 출시 체인과 그 체인에서의 denom. 앱은 «받는 체인» 후보를 여기서 읽고, 채널은 노드에서 다시 확인한다(목록은 후보만 준다).
 - 묻는 토큰: 체인 파일의 기본·스테이킹 토큰과 `currencies`, `registry.config.json` 의 `ibcSources`(앱 내장 XPLA). 그 답에서 다른 출시 체인에 도착한 IBC 토큰(`ibc/…`)도 한 번 더 묻는다(되돌려보내기). **토큰을 IBC 후보에 넣으려면 `currencies` 에 더하는 PR 을 올린다** — 머지되면 그 배포에 포함된다.
 - 만드는 곳: `scripts/ibc-destinations.mjs` 가 Skip API(`/v2/fungible/assets_from_source`)에 묻는다. 저장소 비밀값 `SKIP_API_KEY` 가 있으면 그 키로, 없으면 키 없이(공용 한도). **키는 이 저장소 비밀값에만 둔다** — 앱·코드·문서에 넣지 않는다.
-- 언제: main 머지·하루 한 번(03:17 UTC)·수동 실행(Actions → registry → Run workflow). 질의 하나라도 끝내 실패하거나 결과가 비정상이면 새 파일을 안 쓰고 지금 배포된 파일을 다시 올린다.
+- 언제: main 머지·하루 한 번(03:17 UTC)·수동 실행(Actions → registry → Run workflow). 질의 하나라도 끝내 실패하거나 결과가 비정상이면 새 파일을 안 쓰고 지금 배포된 파일을 다시 올린 뒤, 그 실행을 실패(`stale` 작업)로 끝내 알림이 가게 한다.
 - 🔴 공개 저장소의 예약 실행은 저장소에 60일 동안 활동이 없으면 GitHub 가 끈다. 꺼지면 Actions 탭에서 `registry` 작업을 다시 켠다(Enable workflow). 꺼져 있어도 앱은 마지막 배포 파일·캐시·내장 사본으로 돈다.
 
 ## 구조
