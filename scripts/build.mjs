@@ -128,6 +128,6 @@ if (errors.length) {
 if (!process.argv.includes('--check')) {
   mkdirSync(join(ROOT, 'dist'), { recursive: true });
   for (const { name, out } of outputs) writeFileSync(join(ROOT, 'dist', name), out);
-  writeFileSync(join(ROOT, 'dist/index.html'), '<!doctype html><meta charset="utf-8"><title>xPlayz chain registry</title><p><a href="registry.json">registry.json</a></p><p><a href="registry-testnet.json">registry-testnet.json</a></p>\n');
+  writeFileSync(join(ROOT, 'dist/index.html'), '<!doctype html><meta charset="utf-8"><title>xPlayz chain registry</title><p><a href="registry.json">registry.json</a></p><p><a href="registry-testnet.json">registry-testnet.json</a></p><p><a href="ibc-destinations.json">ibc-destinations.json</a></p>\n');
 }
 console.log(`OK — ${outputs.map(({ name, count, out }) => `${name} 체인 ${count}개 ${Buffer.byteLength(out)} 바이트`).join(' · ')}`);

@@ -10,5 +10,10 @@
     "cosmoshub-testnet",
     "osmosis-testnet",
     "injective-testnet"
-  ]
+  ],
+  "ibcSources": {
+    "dimension_37-1": [
+      "axpla"
+    ]
+  }
 }
