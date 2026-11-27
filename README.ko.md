@@ -226,7 +226,9 @@ Pages 첫 화면(`index.html`)에는 세 파일 링크가 있다.
 | 객체 | 필드 |
 | --- | --- |
 | `display` | `symbol`: 텍스트. `decimals`: 정수 0 ~ 255 |
-| `stakeCurrency`, `currencies` 의 각 항목 | `denom`: 텍스트. `symbol`: 텍스트. `decimals`: 정수 0 ~ 255 |
+| `stakeCurrency`, `currencies` 의 각 항목 | `denom`: 텍스트. `symbol`: 텍스트. `decimals`: 정수 0 ~ 255. `coinGeckoId`(선택): `^[a-z0-9-]{1,100}$` |
+
+**`coinGeckoId`:** xPlayz 가격 서버가 출시 체인(`cosmos/`)의 `currencies`·`stakeCurrency` 에서 `coinGeckoId` 를 모아 CoinGecko 가격을 받는다. CoinGecko 에서 그 id 가 바로 이 denom 임을 확인할 수 있을 때만 넣는다 — CoinGecko 의 그 코인 플랫폼 주소가 denom 과 같거나, 체인의 denom trace 를 따라가면 그 id 의 토큰이 나오는 경우다. 브리지 토큰(예: Axelar 토큰)은 보통 원래 토큰과 다른 id 를 따로 갖는다. `cosmos-testnet/` 파일에는 넣지 않는다.
 
 ### `features` 값
 

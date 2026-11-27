@@ -23,7 +23,8 @@
   "stakeCurrency": {
     "denom": "uatom",
     "symbol": "ATOM",
-    "decimals": 6
+    "decimals": 6,
+    "coinGeckoId": "cosmos"
   },
   "gasAdjustment": 1.3,
   "minGasPrice": "0.025",
@@ -36,12 +37,14 @@
     {
       "denom": "uatom",
       "symbol": "ATOM",
-      "decimals": 6
+      "decimals": 6,
+      "coinGeckoId": "cosmos"
     },
     {
       "denom": "ibc/F04D72CF9B5D9C849BB278B691CDFA2241813327430EC9CDC83F8F4CA4CDC2B0",
       "symbol": "USDt",
-      "decimals": 6
+      "decimals": 6,
+      "coinGeckoId": "tether"
     },
     {
       "denom": "ibc/B26F762ED6D20D0D5305FE1870A476EBCB95127C10199F3CB16E69D893E9F775",
@@ -66,7 +69,8 @@
     {
       "denom": "factory/cosmos146s5j3t7gh2g37ywm47dp8avhesu2htvjjaxq7z55e7xj0rq0k8q5qnjjy/PHMN",
       "symbol": "PHMN",
-      "decimals": 6
+      "decimals": 6,
+      "coinGeckoId": "posthuman"
     },
     {
       "denom": "factory/cosmos1nxxz937qd6zqxllwplydy6hts97c4amaqj8jxa57nsme3dmckk4s3mqujr/RESP",
@@ -81,7 +85,8 @@
     {
       "denom": "ibc/E107DB3E8AABB49C87CB737A1ABBFDBA9803ECAE05E295D8D7A0B1A7FE83706C",
       "symbol": "USDC.inj",
-      "decimals": 6
+      "decimals": 6,
+      "coinGeckoId": "usd-coin"
     },
     {
       "denom": "factory/cosmos1czdq25vuxw64gcj3lwvl3z93l76d92y7nys9u2/cinn",

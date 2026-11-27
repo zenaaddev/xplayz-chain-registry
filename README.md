@@ -226,7 +226,9 @@ The constraints below are the ones `scripts/build.mjs` enforces. «Text» means 
 | Object | Fields |
 | --- | --- |
 | `display` | `symbol`: text. `decimals`: integer 0 – 255 |
-| `stakeCurrency`, each `currencies` item | `denom`: text. `symbol`: text. `decimals`: integer 0 – 255 |
+| `stakeCurrency`, each `currencies` item | `denom`: text. `symbol`: text. `decimals`: integer 0 – 255. `coinGeckoId` (optional): `^[a-z0-9-]{1,100}$` |
+
+**`coinGeckoId`:** the xPlayz price server collects the `coinGeckoId` values in `currencies` and `stakeCurrency` of release chains (`cosmos/`) and fetches their prices from CoinGecko. Add it only when CoinGecko confirms that the id names this exact denom: the coin's platform address on CoinGecko equals the denom, or the denom trace on the chain leads to the token the id names. A bridged token (for example an Axelar token) usually has its own id, separate from the original token. Do not add it to `cosmos-testnet/` files.
 
 ### Features
 

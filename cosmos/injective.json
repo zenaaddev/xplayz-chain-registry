@@ -23,7 +23,8 @@
   "stakeCurrency": {
     "denom": "inj",
     "symbol": "INJ",
-    "decimals": 18
+    "decimals": 18,
+    "coinGeckoId": "injective-protocol"
   },
   "gasAdjustment": 1.3,
   "minGasPrice": "160000000",
@@ -36,12 +37,14 @@
     {
       "denom": "inj",
       "symbol": "INJ",
-      "decimals": 18
+      "decimals": 18,
+      "coinGeckoId": "injective-protocol"
     },
     {
       "denom": "ibc/4ABBEF4C8926DDDB320AE5188CFD63267ABBCEFC0583E4AE05D6E5AA2401DDAB",
       "symbol": "USDTkv",
-      "decimals": 6
+      "decimals": 6,
+      "coinGeckoId": "tether"
     },
     {
       "denom": "factory/inj1cdwt8g7nxgtg2k4fn8sj363mh9ahkw2qt0vrnc/ampINJ",
@@ -56,7 +59,8 @@
     {
       "denom": "factory/inj1xtel2knkt8hmc9dnzpjz6kdmacgcfmlv5f308w/ninja",
       "symbol": "NINJA",
-      "decimals": 6
+      "decimals": 6,
+      "coinGeckoId": "dog-wif-nuchucks"
     },
     {
       "denom": "factory/inj1jdt04erw6jdmh6c939u87kldf3mvvmkedsjp3w/OYCI",
@@ -126,7 +130,8 @@
     {
       "denom": "factory/inj1maeyvxfamtn8lfyxpjca8kuvauuf2qeu6gtxm3/Talis",
       "symbol": "TALIS",
-      "decimals": 6
+      "decimals": 6,
+      "coinGeckoId": "talis-protocol"
     },
     {
       "denom": "factory/inj1maeyvxfamtn8lfyxpjca8kuvauuf2qeu6gtxm3/xTalis",
@@ -136,7 +141,8 @@
     {
       "denom": "ibc/2CBC2EA121AE42563B08028466F37B600F2D7D4282342DE938283CC3FB2BC00E",
       "symbol": "USDC.n",
-      "decimals": 6
+      "decimals": 6,
+      "coinGeckoId": "usd-coin"
     },
     {
       "denom": "factory/inj1a6xdezq7a94qwamec6n6cnup02nvewvjtz6h6e/SYN",
@@ -166,7 +172,8 @@
     {
       "denom": "factory/inj1v3a4zznudwpukpr8y987pu5gnh4xuf7v36jhva/nept",
       "symbol": "NEPT",
-      "decimals": 6
+      "decimals": 6,
+      "coinGeckoId": "neptune-2"
     },
     {
       "denom": "factory/inj1s9hr5zfz3xrkzchde94hd2d0edjs4q5mrqrz6x/BITCOIN",
@@ -201,7 +208,8 @@
     {
       "denom": "factory/inj1n636d9gzrqggdk66n2f97th0x8yuhfrtx520e7/ausd",
       "symbol": "AUSD",
-      "decimals": 6
+      "decimals": 6,
+      "coinGeckoId": "agora-dollar"
     },
     {
       "denom": "factory/inj13j2rpnlwl30c02d4pzukykwfeyyhelvry9cqte/shroom_8_be9bddf36b94db69",
@@ -211,7 +219,8 @@
     {
       "denom": "factory/inj13j2rpnlwl30c02d4pzukykwfeyyhelvry9cqte/shroom_0_3b4d31d5571b97db",
       "symbol": "MOTION",
-      "decimals": 18
+      "decimals": 18,
+      "coinGeckoId": "motion-6"
     },
     {
       "denom": "factory/inj1dg3nxn4z36p2sqem4cy2jsdjf4ytk8cn256jjx/T42",
