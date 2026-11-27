@@ -35,7 +35,9 @@ function https(v) {
 }
 const int = (v, min, max) => Number.isInteger(v) && v >= min && v <= max;
 const display = (v) => !!v && typeof v === 'object' && text(v.symbol) && int(v.decimals, 0, 255);
-const currency = (v) => display(v) && text(v.denom);
+// coinGeckoId 는 선택이다 — 가격 서버가 출시 체인에서 모아 CoinGecko 가격을 받는다(앱은 형식이 틀리면 조용히 버린다).
+const coinGeckoId = (v) => v === undefined || (typeof v === 'string' && /^[a-z0-9-]{1,100}$/.test(v));
+const currency = (v) => display(v) && text(v.denom) && coinGeckoId(v.coinGeckoId);
 function gasPrice(v) {
   if (typeof v !== 'string' || v.length > 256 || !/^\d+(?:\.\d+)?$/.test(v)) return false;
   const [whole, fraction = ''] = v.split('.');
