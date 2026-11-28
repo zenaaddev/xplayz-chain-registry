@@ -74,8 +74,10 @@ Pages 첫 화면(`index.html`)에는 세 파일 링크가 있다.
 ```
 .
 ├── cosmos/                       # 출시 체인, 체인 하나가 파일 하나: <id>.json, "testnet": false
+│   ├── axelar.json
 │   ├── cosmoshub.json
 │   ├── injective.json
+│   ├── noble.json
 │   └── osmosis.json
 ├── cosmos-testnet/               # 테스트넷 체인, 체인 하나가 파일 하나: <id>.json, "testnet": true
 │   ├── cosmoshub-testnet.json
@@ -228,6 +230,8 @@ Pages 첫 화면(`index.html`)에는 세 파일 링크가 있다.
 | `display` | `symbol`: 텍스트. `decimals`: 정수 0 ~ 255 |
 | `stakeCurrency`, `currencies` 의 각 항목 | `denom`: 텍스트. `symbol`: 텍스트. `decimals`: 정수 0 ~ 255. `coinGeckoId`(선택): `^[a-z0-9-]{1,100}$` |
 
+**`symbol`:** 그 체인에서 그 denom 에 Skip 이 권하는 기호를 쓴다(`GET https://api.skip.build/v2/fungible/assets?chain_ids=<chainId>` 의 `recommended_symbol`). Keplr 같은 지갑이 쓰는 표기로, 브리지 토큰은 어디서 왔는지를 뒤에 붙인다 — 예: `USDC.axl`(Axelar 를 거친 USDC), `USDC.n`(Noble USDC), `USDT.kava`. Skip 목록에 없는 denom 은 cosmos/chain-registry 기호를 쓴다. `display.symbol` 도 `feeDenom` 에 대해 같은 규칙을 따른다.
+
 **`coinGeckoId`:** xPlayz 가격 서버가 출시 체인(`cosmos/`)의 `currencies`·`stakeCurrency` 에서 `coinGeckoId` 를 모아 CoinGecko 가격을 받는다. CoinGecko 에서 그 id 가 바로 이 denom 임을 확인할 수 있을 때만 넣는다 — CoinGecko 의 그 코인 플랫폼 주소가 denom 과 같거나, 체인의 denom trace 를 따라가면 그 id 의 토큰이 나오는 경우다. 브리지 토큰(예: Axelar 토큰)은 보통 원래 토큰과 다른 id 를 따로 갖는다. `cosmos-testnet/` 파일에는 넣지 않는다.
 
 ### `features` 값
@@ -264,7 +268,7 @@ Pages 첫 화면(`index.html`)에는 세 파일 링크가 있다.
 {
   "version": 1,
   "source": "cosmos/chain-registry (CC BY 4.0)",
-  "order": ["cosmoshub", "osmosis", "injective"],
+  "order": ["cosmoshub", "osmosis", "injective", "noble", "axelar"],
   "testnetOrder": ["cosmoshub-testnet", "osmosis-testnet", "injective-testnet"],
   "ibcSources": {
     "dimension_37-1": ["axpla"]

@@ -42,7 +42,7 @@
     },
     {
       "denom": "ibc/F04D72CF9B5D9C849BB278B691CDFA2241813327430EC9CDC83F8F4CA4CDC2B0",
-      "symbol": "USDt",
+      "symbol": "USDT.kava",
       "decimals": 6,
       "coinGeckoId": "tether"
     },

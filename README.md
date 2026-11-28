@@ -74,8 +74,10 @@ The Pages root (`index.html`) links to the three files.
 ```
 .
 ├── cosmos/                       # Release chains, one file per chain: <id>.json, "testnet": false
+│   ├── axelar.json
 │   ├── cosmoshub.json
 │   ├── injective.json
+│   ├── noble.json
 │   └── osmosis.json
 ├── cosmos-testnet/               # Testnet chains, one file per chain: <id>.json, "testnet": true
 │   ├── cosmoshub-testnet.json
@@ -228,6 +230,8 @@ The constraints below are the ones `scripts/build.mjs` enforces. «Text» means 
 | `display` | `symbol`: text. `decimals`: integer 0 – 255 |
 | `stakeCurrency`, each `currencies` item | `denom`: text. `symbol`: text. `decimals`: integer 0 – 255. `coinGeckoId` (optional): `^[a-z0-9-]{1,100}$` |
 
+**`symbol`:** use the symbol Skip recommends for that denom on that chain (`recommended_symbol` in `GET https://api.skip.build/v2/fungible/assets?chain_ids=<chainId>`). This is the notation wallets such as Keplr use: a bridged token carries a suffix for where it came from, for example `USDC.axl` (USDC through Axelar), `USDC.n` (Noble USDC) and `USDT.kava`. If Skip does not list the denom, use the cosmos/chain-registry symbol. `display.symbol` follows the same rule for `feeDenom`.
+
 **`coinGeckoId`:** the xPlayz price server collects the `coinGeckoId` values in `currencies` and `stakeCurrency` of release chains (`cosmos/`) and fetches their prices from CoinGecko. Add it only when CoinGecko confirms that the id names this exact denom: the coin's platform address on CoinGecko equals the denom, or the denom trace on the chain leads to the token the id names. A bridged token (for example an Axelar token) usually has its own id, separate from the original token. Do not add it to `cosmos-testnet/` files.
 
 ### Features
@@ -264,7 +268,7 @@ The constraints below are the ones `scripts/build.mjs` enforces. «Text» means 
 {
   "version": 1,
   "source": "cosmos/chain-registry (CC BY 4.0)",
-  "order": ["cosmoshub", "osmosis", "injective"],
+  "order": ["cosmoshub", "osmosis", "injective", "noble", "axelar"],
   "testnetOrder": ["cosmoshub-testnet", "osmosis-testnet", "injective-testnet"],
   "ibcSources": {
     "dimension_37-1": ["axpla"]

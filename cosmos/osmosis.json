@@ -48,35 +48,35 @@
     },
     {
       "denom": "ibc/D189335C6E4A68B513C10AB227BF1C1D38C746766278BA3EEB4FB14124F1D858",
-      "symbol": "USDC",
+      "symbol": "USDC.axl",
       "decimals": 6,
       "coinGeckoId": "axelar-bridged-usdc-cosmos"
     },
     {
       "denom": "ibc/EA1D43981D5C9A1C4AAEA9C23BB1D4FA126BA9BC7020A25E0AE4AA841EA25DC5",
-      "symbol": "WETH",
+      "symbol": "WETH.axl",
       "decimals": 18,
       "coinGeckoId": "axlweth"
     },
     {
       "denom": "ibc/D1542AA8762DB13087D8364F3EA6509FD6F009A34F00426AF9E4F9FA85CBBF1F",
-      "symbol": "WBTC",
+      "symbol": "WBTC.axl",
       "decimals": 8
     },
     {
       "denom": "ibc/8242AD24008032E457D2E12D46588FD39FB54FB29680C6C7663D296B383C37C4",
-      "symbol": "USDT",
+      "symbol": "USDT.axl",
       "decimals": 6,
       "coinGeckoId": "axelar-usdt"
     },
     {
       "denom": "ibc/0CD3A0285E1341859B5E86B6AB7682F023D03E97607CCC1DC95706411D866DF7",
-      "symbol": "DAI",
+      "symbol": "DAI.axl",
       "decimals": 18
     },
     {
       "denom": "ibc/6329DD8CF31A334DD5BE3F68C846C9FE313281362B37686A62343BAC1EB1546D",
-      "symbol": "BUSD",
+      "symbol": "BUSD.axl",
       "decimals": 18
     },
     {
@@ -87,22 +87,22 @@
     },
     {
       "denom": "ibc/F4A070A6D78496D53127EA85C094A9EC87DFC1F36071B8CCDDBD020F933D213D",
-      "symbol": "WBNB",
+      "symbol": "WBNB.axl",
       "decimals": 18
     },
     {
       "denom": "ibc/AB589511ED0DD5FA56171A39978AFBF1371DB986EC1C3526CE138A16377E39BB",
-      "symbol": "WMATIC",
+      "symbol": "WMATIC.axl",
       "decimals": 18
     },
     {
       "denom": "ibc/6F62F01D913E3FFE472A38C78235B8F021B511BC6596ADFF02615C8F83D3B373",
-      "symbol": "WAVAX",
+      "symbol": "WAVAX.axl",
       "decimals": 18
     },
     {
       "denom": "ibc/3FF92D26B407FD61AE95D975712A7C319CDE28DE4D80BDC9978D935932B991D7",
-      "symbol": "DOT",
+      "symbol": "DOT.axl",
       "decimals": 10
     },
     {
@@ -124,7 +124,7 @@
     },
     {
       "denom": "ibc/0E43EDE2E2A3AFA36D0CD38BDDC0B49FECA64FA426A82E102F304E430ECF46EE",
-      "symbol": "FRAX",
+      "symbol": "FRAX.axl",
       "decimals": 18
     },
     {
@@ -139,38 +139,38 @@
     },
     {
       "denom": "ibc/D3327A763C23F01EC43D1F0DB3CEFEC390C362569B6FD191F40A5192F8960049",
-      "symbol": "LINK",
+      "symbol": "LINK.axl",
       "decimals": 18,
       "coinGeckoId": "chainlink"
     },
     {
       "denom": "ibc/384E5DD50BDE042E1AAF51F312B55F08F95BC985C503880189258B4D9374CBBE",
-      "symbol": "AAVE",
+      "symbol": "AAVE.axl",
       "decimals": 18
     },
     {
       "denom": "ibc/F83CC6471DA4D4B508F437244F10B9E4C68975344E551A2DEB6B8617AB08F0D4",
-      "symbol": "APE",
+      "symbol": "APE.axl",
       "decimals": 18
     },
     {
       "denom": "ibc/D27DDDF34BB47E5D5A570742CC667DE53277867116CCCA341F27785E899A70F3",
-      "symbol": "MKR",
+      "symbol": "MKR.axl",
       "decimals": 18
     },
     {
       "denom": "ibc/BD796662F8825327D41C96355DF62045A5BA225BAE31C0A86289B9D88ED3F44E",
-      "symbol": "RAI",
+      "symbol": "RAI.axl",
       "decimals": 18
     },
     {
       "denom": "ibc/19305E20681911F14D1FB275E538CDE524C3BF88CF9AE5D5F78F4D4DA05E85B2",
-      "symbol": "SHIB",
+      "symbol": "SHIB.axl",
       "decimals": 18
     },
     {
       "denom": "ibc/1E26DB0E5122AED464D98462BD384FCCB595732A66B3970AE6CE0B58BAE0FC49",
-      "symbol": "WGLMR",
+      "symbol": "WGLMR.axl",
       "decimals": 18
     },
     {
@@ -186,17 +186,17 @@
     },
     {
       "denom": "ibc/5E2DFDF1734137302129EA1C1BA21A580F96F778D4F021815EA4F6DB378DA1A4",
-      "symbol": "WFTM",
+      "symbol": "WFTM.axl",
       "decimals": 18
     },
     {
       "denom": "ibc/231FD77ECCB2DB916D314019DA30FE013202833386B1908A191D16989AD80B5A",
-      "symbol": "USDC",
+      "symbol": "USDC.axl.polygon",
       "decimals": 6
     },
     {
       "denom": "ibc/F17C9CA112815613C5B6771047A093054F837C3020CBA59DFFD9D780A8B2984C",
-      "symbol": "USDC",
+      "symbol": "USDC.axl.avalanche",
       "decimals": 6
     },
     {
@@ -206,17 +206,17 @@
     },
     {
       "denom": "ibc/18FB5C09D9D2371F659D4846A956FA56225E377EE3C3652A2BF3542BF809159D",
-      "symbol": "axlFIL",
+      "symbol": "FIL.axl",
       "decimals": 18
     },
     {
       "denom": "ibc/10E5E5B06D78FFBB61FD9F89209DEE5FD4446ED0550CBB8E3747DA79E10D9DC6",
-      "symbol": "ARB",
+      "symbol": "ARB.axl",
       "decimals": 18
     },
     {
       "denom": "ibc/E47F4E97C534C95B942729E1B25DBDE111EA791411CFF100515050BEA0AC0C6B",
-      "symbol": "PEPE",
+      "symbol": "PEPE.axl",
       "decimals": 18
     },
     {
@@ -227,22 +227,22 @@
     },
     {
       "denom": "ibc/4D7A6F2A7744B1534C984A21F9EDFFF8809FC71A9E9243FFB702073E7FCA513A",
-      "symbol": "cbETH",
+      "symbol": "cbETH.axl",
       "decimals": 18
     },
     {
       "denom": "ibc/E610B83FD5544E00A8A1967A2EB3BEF25F1A8CFE8650FE247A8BD4ECA9DC9222",
-      "symbol": "rETH",
+      "symbol": "rETH.axl",
       "decimals": 18
     },
     {
       "denom": "ibc/81F578C39006EB4B27FFFA9460954527910D73390991B379C03B18934D272F46",
-      "symbol": "sfrxETH",
+      "symbol": "sfrxETH.axl",
       "decimals": 18
     },
     {
       "denom": "ibc/B2BD584CD2A0A9CE53D4449667E26160C7D44A9C41AF50F602C201E5B3CCA46C",
-      "symbol": "wstETH",
+      "symbol": "wstETH.axl",
       "decimals": 18
     }
   ]
