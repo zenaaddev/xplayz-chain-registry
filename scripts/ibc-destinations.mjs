@@ -5,6 +5,7 @@
 // 앱에 키를 넣지 않고, Skip 호출 수가 앱 사용자 수와 무관하게 하기 위해서다.
 //
 // 묻는 토큰 = 출시 체인(cosmos/, order)의 기본·스테이킹 토큰과 currencies + registry.config.json ibcSources(앱 내장 XPLA).
+// hideInUI 체인(IBC 출처 해석 전용 — 앱 ADR-045)은 출발·목적지 어느 쪽에도 넣지 않는다.
 // 1차 답에서 다른 출시 체인에 도착한 IBC 표기(ibc/…)를 그 체인의 출발 토큰으로 한 번 더 묻는다(되돌려보내기).
 // 하나라도 끝내 실패하면 파일을 쓰지 않고 1 로 끝낸다 — 배포 작업이 이전 배포 파일을 다시 올린다(빈 목록으로 덮지 않는다).
 //
@@ -26,7 +27,7 @@ const config = JSON.parse(readFileSync(join(ROOT, 'registry.config.json'), 'utf8
 const chains = readdirSync(join(ROOT, 'cosmos'))
   .filter((f) => f.endsWith('.json'))
   .map((f) => JSON.parse(readFileSync(join(ROOT, 'cosmos', f), 'utf8')))
-  .filter((c) => config.order.includes(c.id));
+  .filter((c) => config.order.includes(c.id) && !c.hideInUI);
 
 // CW20 은 bank 전송이 아니라 IBC 1홉 대상이 아니다(앱도 조회하지 않는다).
 const bank = (denom) => typeof denom === 'string' && denom.length > 0 && denom.length <= 256 && !denom.startsWith('cw20:');

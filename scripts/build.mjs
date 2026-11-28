@@ -14,7 +14,7 @@ const BUILTIN = { ids: ['xpla-mainnet', 'xpla-testnet'], chainIds: ['dimension_3
 const KEYS = new Set([
   'id', 'chainId', 'name', 'bech32Prefix', 'coinType', 'keyType', 'pubKeyTypeUrl', 'feeDenom',
   'display', 'lcd', 'rpc', 'explorerTx', 'explorerAccount', 'features', 'stakeCurrency',
-  'gasAdjustment', 'minGasPrice', 'testnet', 'txSearch', 'currencies',
+  'gasAdjustment', 'minGasPrice', 'testnet', 'hideInUI', 'txSearch', 'currencies',
 ]);
 const REQUIRED = [
   'id', 'chainId', 'name', 'bech32Prefix', 'coinType', 'keyType', 'pubKeyTypeUrl', 'feeDenom',
@@ -71,6 +71,8 @@ function check(chain, file) {
   if (chain.features?.includes('evm-min-gas-price') && !/^\d+$/.test(chain.minGasPrice ?? ''))
     fail('evm-min-gas-price 체인의 minGasPrice 는 정수');
   if (typeof chain.testnet !== 'boolean') fail('testnet 은 true/false');
+  // hideInUI(Keplr 체인 정보 필드): IBC 출처 해석·가격 ID 에만 쓰는 체인 — 앱 체인 관리·켜기·보낼 곳에 나오지 않는다(앱 ADR-045).
+  if ('hideInUI' in chain && typeof chain.hideInUI !== 'boolean') fail('hideInUI 는 true/false');
   if ('txSearch' in chain) {
     const t = chain.txSearch;
     if (!t || !https(t.lcd) || !['query', 'events'].includes(t.param)) fail('txSearch 형식');

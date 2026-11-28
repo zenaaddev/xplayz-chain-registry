@@ -218,6 +218,7 @@ Pages 첫 화면(`index.html`)에는 세 파일 링크가 있다.
 | `gasAdjustment` | 예 | 숫자, 1 이상 3 이하 | `1.3` | 가스 배율 |
 | `minGasPrice` | 예 | `^\d+(\.\d+)?$` 인 소수 **문자열**, 256자 이하, 값은 10¹⁴ 이하. `evm-min-gas-price` 체인이면 정수 문자열만 | `"0.025"` | `feeDenom` 기준 최소 가스 가격 |
 | `testnet` | 예 | `true` 또는 `false`. `cosmos/` 는 `false`, `cosmos-testnet/` 은 `true` 여야 한다 | `false` | 테스트넷 여부 |
+| `hideInUI` | 아니오 | `true` 또는 `false` | `true` | IBC 출처 해석 전용 체인: 그 체인에서 온 IBC 토큰의 기호·자릿수·가격 ID 를 풀려고 둔다. 앱의 체인 관리·켜기·보낼 곳에 나오지 않고, `ibc-destinations.json` 에서도 빠진다 |
 | `txSearch` | 아니오 | `{ lcd: HTTPS 주소, param: "query" 또는 "events" }` | `{ "lcd": "https://cosmos-rest.publicnode.com", "param": "query" }` | 거래 검색 노드와 파라미터. 없으면 앱이 그 체인의 거래 히스토리를 보여 주지 않는다 |
 | `currencies` | 아니오 | `{ denom, symbol, decimals }` 의 배열, **100개**까지 | 예시 참고 | 알려진 토큰, [`currencies` 의 역할](#currencies-의-역할) 참고 |
 
@@ -312,7 +313,7 @@ Pages 첫 화면(`index.html`)에는 세 파일 링크가 있다.
 
 `scripts/ibc-destinations.mjs` 가 Skip API(`POST https://api.skip.build/v2/fungible/assets_from_source`, `allow_multi_tx: false`)에 묻는다.
 
-1. **출발 토큰:** 출시 체인(`cosmos/`, `order`)마다 `feeDenom`·`stakeCurrency`·`currencies` 의 denom 전부 + `registry.config.json` 의 `ibcSources`(앱 내장 XPLA). CW20 토큰(`cw20:`)은 뺀다.
+1. **출발 토큰:** 출시 체인(`cosmos/`, `order`)마다 `feeDenom`·`stakeCurrency`·`currencies` 의 denom 전부 + `registry.config.json` 의 `ibcSources`(앱 내장 XPLA). CW20 토큰(`cw20:`)은 뺀다. `hideInUI: true` 체인은 빼므로 출발에도 목적지에도 나오지 않는다.
 2. **목적지:** 다른 출시 체인만, bank denom 만(CW20 제외), 중복을 빼고 정렬한다.
 3. **되돌려보내기:** 1차 답에서 다른 출시 체인에 도착한 IBC 표기(`ibc/…`)를 그 체인의 출발 토큰으로 한 번 더 묻는다.
 4. **재시도:** 질의마다 4번까지(20초 제한 시간, 시도 사이 대기 시간을 늘림, 동시에 4개). 404(«route not found»)는 실패가 아니라 «받는 체인 없음» 이다. 429·5xx·시간 초과는 다시 묻고, 그 밖의 4xx 는 다시 묻지 않는다.
