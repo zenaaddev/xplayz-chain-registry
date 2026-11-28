@@ -218,6 +218,7 @@ The constraints below are the ones `scripts/build.mjs` enforces. «Text» means 
 | `gasAdjustment` | Yes | Number, 1 ≤ value ≤ 3 | `1.3` | Gas multiplier |
 | `minGasPrice` | Yes | Decimal **string** matching `^\d+(\.\d+)?$`, at most 256 characters, value at most 10¹⁴. With `evm-min-gas-price`, an integer string only | `"0.025"` | Minimum gas price in `feeDenom` |
 | `testnet` | Yes | `true` or `false`. Must be `false` in `cosmos/` and `true` in `cosmos-testnet/` | `false` | Testnet flag |
+| `hideInUI` | No | `true` or `false` | `true` | IBC-origin-only chain: kept so the app can resolve IBC tokens that came from it (symbol, decimals, price id). The app leaves it out of chain management, enabling and send targets, and `ibc-destinations.json` leaves it out |
 | `txSearch` | No | `{ lcd: HTTPS URL, param: "query" or "events" }` | `{ "lcd": "https://cosmos-rest.publicnode.com", "param": "query" }` | Node and query parameter for transaction history. Without it the app shows no history for the chain |
 | `currencies` | No | Array of at most **100** `{ denom, symbol, decimals }` | see the example | Known tokens, see [The Role of `currencies`](#the-role-of-currencies) |
 
@@ -312,7 +313,7 @@ For example, `routes["dimension_37-1"]["axpla"]` is `{ "cosmoshub-4": ["ibc/102A
 
 `scripts/ibc-destinations.mjs` asks the Skip API (`POST https://api.skip.build/v2/fungible/assets_from_source`, `allow_multi_tx: false`).
 
-1. **Source tokens:** for each release chain (`cosmos/`, in `order`), its `feeDenom`, `stakeCurrency` and every `currencies` denom, plus `registry.config.json` `ibcSources` (the app's built-in XPLA). CW20 tokens (`cw20:`) are skipped.
+1. **Source tokens:** for each release chain (`cosmos/`, in `order`), its `feeDenom`, `stakeCurrency` and every `currencies` denom, plus `registry.config.json` `ibcSources` (the app's built-in XPLA). CW20 tokens (`cw20:`) are skipped. Chains with `hideInUI: true` are skipped, so they are neither sources nor destinations.
 2. **Destinations:** only other release chains, only bank denoms (no CW20), deduplicated and sorted.
 3. **Return routes:** an IBC denom (`ibc/…`) that arrives on another release chain in the first answers is asked once more as a source token on that chain.
 4. **Retries:** each query is tried up to 4 times (20 s timeout, back-off between tries, 4 queries in parallel). A 404 («route not found») means «no destinations», not a failure. 429, 5xx and timeouts are retried. Other 4xx are not.

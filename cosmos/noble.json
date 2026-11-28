@@ -19,6 +19,7 @@
   "gasAdjustment": 1.3,
   "minGasPrice": "0.1",
   "testnet": false,
+  "hideInUI": true,
   "txSearch": {
     "lcd": "https://noble-api.polkachu.com",
     "param": "query"
